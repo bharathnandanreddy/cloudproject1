@@ -49,7 +49,6 @@ def signup_post():
     time_stamp = calendar.timegm(current_GMT)
     if f.filename!="" and f.filename!=None:
         filename=str(time_stamp)+'_'+f.filename
-        
         f.save('/home/ubuntu/files/'+filename)
         with open('/home/ubuntu/files/'+filename) as f:
             text = f.read()
