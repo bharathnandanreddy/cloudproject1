@@ -11,5 +11,5 @@ def index():
 @main.route('/profile')
 @login_required
 def profile():
-    filename='/home/ubuntu/files/'+current_user.filename
+    filename='files/'+current_user.filename
     return render_template('profile.html',count=current_user.count, filename=filename, fname=current_user.fname,lname=current_user.lname, email=current_user.email, loggedin=current_user.is_authenticated)
