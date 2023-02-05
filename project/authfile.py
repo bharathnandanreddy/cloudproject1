@@ -6,7 +6,7 @@ from flask_login import login_user,login_required, logout_user
 from fileinput import filename
 import calendar
 import time
-
+import os
 
 auth = Blueprint('auth', __name__)
 
@@ -51,6 +51,7 @@ def signup_post():
         filename=f.filename
         f.save('static/files/'+filename)
         filename="Limerick.txt"
+        print(os.path.abspath(os.getcwd())+'/static/files/'+filename)
         with open('static/files/'+filename) as f:
             text = f.read()
             count=len(text.split())
