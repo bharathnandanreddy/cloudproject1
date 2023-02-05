@@ -4,6 +4,7 @@ from models import db
 import os
 
 
+
 app = Flask(__name__)
 file_path = "users.sqlite"
 
