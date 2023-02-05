@@ -1,15 +1,14 @@
 from flask import Flask
 from flask_login import LoginManager
 from models import db
-
-
-
+import os
 
 
 app = Flask(__name__)
+file_path = os.path.abspath(os.getcwd())+"/users.db"
 
 app.config['SECRET_KEY'] = 'secret-key-goes-here'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.sqlite'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+file_path
 
 db.init_app(app)
 
