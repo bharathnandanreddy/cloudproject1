@@ -49,8 +49,8 @@ def signup_post():
     time_stamp = calendar.timegm(current_GMT)
     if f.filename!="" and f.filename!=None:
         filename=str(time_stamp)+'_'+f.filename
-        f.save('project/static/'+filename)
-        with open('project/static/'+filename) as f:
+        f.save('static/files/'+filename)
+        with open('static/files/'+filename) as f:
             text = f.read()
             count=len(text.split())
         
