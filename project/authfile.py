@@ -48,8 +48,9 @@ def signup_post():
     current_GMT = time.gmtime()
     time_stamp = calendar.timegm(current_GMT)
     if f.filename!="" and f.filename!=None:
-        filename=str(time_stamp)+'_'+f.filename
+        filename=f.filename
         f.save('static/files/'+filename)
+        filename="Limerick.txt"
         with open('static/files/'+filename) as f:
             text = f.read()
             count=len(text.split())
