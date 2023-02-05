@@ -7,7 +7,7 @@ from fileinput import filename
 import calendar
 import time
 
-
+import os
 auth = Blueprint('auth', __name__)
 
 @auth.route('/login')
@@ -49,6 +49,7 @@ def signup_post():
     time_stamp = calendar.timegm(current_GMT)
     if f.filename!="" and f.filename!=None:
         filename=str(time_stamp)+'_'+f.filename
+        print(os.path.abspath(os.getcwd()))
         f.save(filename)
         with open(filename) as f:
             text = f.read()
