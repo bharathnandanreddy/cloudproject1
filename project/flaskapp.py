@@ -5,7 +5,7 @@ import os
 
 
 app = Flask(__name__)
-file_path = os.path.abspath(os.getcwd())+"/users.sqlite"
+file_path = "users.sqlite"
 
 app.config['SECRET_KEY'] = 'secret-key-goes-here'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+file_path
