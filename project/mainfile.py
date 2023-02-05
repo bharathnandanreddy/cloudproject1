@@ -11,5 +11,7 @@ def index():
 @main.route('/profile')
 @login_required
 def profile():
-    filename='http://ec2-100-25-14-111.compute-1.amazonaws.com/files/'+current_user.filename
+    filename=""
+    if filename!="" and filename!=None:
+        filename='http://ec2-100-25-14-111.compute-1.amazonaws.com/files/'+current_user.filename
     return render_template('profile.html',count=current_user.count, filename=filename, fname=current_user.fname,lname=current_user.lname, email=current_user.email, loggedin=current_user.is_authenticated)
