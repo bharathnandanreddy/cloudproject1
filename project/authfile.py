@@ -51,8 +51,7 @@ def signup_post():
         filename=f.filename
         f.save('static/files/'+filename)
         filename="Limerick.txt"
-        print(os.path.abspath(os.getcwd())+'/static/files/'+filename)
-        with open('static/files/'+filename) as f:
+        with open(os.path.abspath(os.getcwd())+'/static/files/'+filename) as f:
             text = f.read()
             count=len(text.split())
         
