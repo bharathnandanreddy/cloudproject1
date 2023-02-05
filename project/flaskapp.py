@@ -11,6 +11,7 @@ app.config['SECRET_KEY'] = 'secret-key-goes-here'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+file_path
 
 db.init_app(app)
+print(os.path.abspath(os.getcwd()))
 
 # See important note below
 from models import User
