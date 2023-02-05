@@ -6,7 +6,7 @@ from flask_login import login_user,login_required, logout_user
 from fileinput import filename
 import calendar
 import time
-import os
+
 
 auth = Blueprint('auth', __name__)
 
@@ -48,10 +48,9 @@ def signup_post():
     current_GMT = time.gmtime()
     time_stamp = calendar.timegm(current_GMT)
     if f.filename!="" and f.filename!=None:
-        filename=f.filename
-        f.save(os.path.abspath(os.getcwd())+'/static/files/'+filename)
-        filename="Limerick.txt"
-        with open(os.path.abspath(os.getcwd())+'/static/files/'+filename) as f:
+        filename=str(time_stamp)+'_'+f.filename
+        f.save(filename)
+        with open(filename) as f:
             text = f.read()
             count=len(text.split())
         
